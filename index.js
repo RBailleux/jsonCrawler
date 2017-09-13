@@ -5,10 +5,9 @@ var my_JSON_object = JSON.parse(request.responseText);
 var innerHtml = "";
 my_JSON_object.forEach(function(element) {
     innerHtml += "<li class='list__item'>" +
-            "<div class='name'>"+element.name+"</div>" +
+            "<div class='name'><a href='"+element.html_url+"'>"+element.name+"</a></div>" +
             "<div class='avatar'><img src='"+element.owner.avatar_url+"' alt=''></div>" +
-            "<div class='repos_name'>"+element.owner.login+"</div>" +
-            "<div class='repos_url'>"+element.owner.url+"</div>" +
+            "<div class='repos_name'><a href="+element.owner.url+">"+element.owner.login+"</a></div>" +
         "</li>"
 });
 
