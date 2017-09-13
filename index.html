@@ -7,9 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="jsonCrawler.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
-	<button onclick="readJSON('repos.json')">Read</button>
-	<div class="jsonContent"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<button class="btn btn-primary" id="readJson">Read</button>
+			</div>
+		</div>
+		<div id="jsonContent" class="row jumbotron">
+		</div>
+	</div>
+	<script>
+		var button = document.getElementById("readJson");
+		button.addEventListener("click",function(e){
+		    var content = readJSON('reposs.json');
+		    if(content){
+		    	
+		    }
+		    else{
+		    	document.getElementById('jsonContent').innerHTML = '<div class="col-xs-12 alert alert-danger"><strong>Erreur!</strong> Le fichier est introuvable.</div>';
+		    }
+		},
+		false);
+	</script>
 </body>
 </html>

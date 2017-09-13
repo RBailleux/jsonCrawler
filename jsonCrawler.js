@@ -4,6 +4,9 @@ function readJSON(file) {
     request.send(null);
     if (request.status == 200){
     	  var json = JSON.parse(request.responseText);
-    	  console.log(json);
+    	 return(json);
+    }
+    else{
+    	return false
     }
 };
