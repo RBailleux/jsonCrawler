@@ -3,6 +3,7 @@ function readJSON(file) {
     request.open('GET', file, false);
     request.send(null);
     if (request.status == 200){
-        alert(request.responseText);
+    	  var json = JSON.parse(request.responseText);
+    	  console.log(json);
     }
 };
